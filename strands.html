@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosales National High School Strands</title>
+    <style>
+        /* Base Reset and Font Style */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Logo Styling */
+        .logo {
+            width: 150px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 15px;
+            border: 2px solid #fff;
+        }
+
+        /* Strands Section */
+        .strand-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+            gap: 30px;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        .strand {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            width: 250px; /* Maintain the same size */
+        }
+
+        .strand:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .strand img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .strand img:hover {
+            transform: scale(1.1);
+        }
+
+        .strand-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .strand-description {
+            display: none;
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        /* Button Styling */
+        .strand-button {
+            background-color: #2575fc;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .strand-button:hover {
+            background-color: #6a11cb;
+        }
+
+        /* Centering ABM and GAS side by side */
+        .strand-container .strand:nth-child(4),
+        .strand-container .strand:nth-child(5) {
+            grid-column: span 1; /* Ensure both strands have equal width */
+            display: inline-block;
+            text-align: center;
+        }
+
+        /* To make them side by side in the center, we use flexbox */
+        .center-strands {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo -->
+        <img src="rnhslogo.jpg"class="image"></a> 
+        
+        <h1>Explore Strands at Rosales National High School</h1>
+
+        <!-- Strands -->
+        <div class="strand-container">
+            <!-- STEM Strand -->
+            <div class="strand" onclick="toggleDescription(this)">
+                <img src="stem.jpg"class="image"></a> alt="STEM Image">
+                <div class="strand-name">STEM (Science, Technology, Engineering, and Mathematics)</div>
+                <p class="strand-description">
+                    The STEM strand focuses on developing skills in scientific research, technological innovations, engineering solutions, and mathematical problem-solving. Students explore subjects like Physics, Chemistry, Calculus, and advanced Biology, aiming for careers in fields like engineering, medicine, and computer science.
+                </p>
+                <button class="strand-button">Learn More</button>
+            </div>
+
+            <!-- HUMSS Strand -->
+            <div class="strand" onclick="toggleDescription(this)">
+                <img src="humss.jpg"class="image"></a> alt="HUMSS Image">
+                <div class="strand-name">HUMSS (Humanities and Social Sciences)</div>
+                <p class="strand-description">
+                    HUMSS explores human behavior, culture, society, and history. Students engage with subjects such as Psychology, Sociology, and Literature, preparing for careers as lawyers, teachers, journalists, and social workers.
+                </p>
+                <button class="strand-button">Learn More</button>
+            </div>
+
+            <!-- TVL Strand -->
+            <div class="strand" onclick="toggleDescription(this)">
+                <img src="tvl.jpg"class="image"></a> alt="TVL Image">
+                <div class="strand-name">TVL (Technical-Vocational-Livelihood)</div>
+                <p class="strand-description">
+                    TVL equips students with practical skills in specific technical fields, such as culinary arts, electronics, welding, automotive, and beauty services. It is ideal for students seeking employment or entrepreneurship after graduation.
+                </p>
+                <button class="strand-button">Learn More</button>
+            </div>
+        </div>
+
+        <!-- Centered ABM and GAS -->
+        <div class="center-strands">
+            <!-- ABM Strand -->
+            <div class="strand" onclick="toggleDescription(this)">
+                <img src="abm.jpg"class="image"></a> alt="ABM Image">
+                <div class="strand-name">ABM (Accountancy, Business, and Management)</div>
+                <p class="strand-description">
+                    ABM focuses on business management, accounting, and financial decision-making. Students explore financial management, marketing, economics, and entrepreneurship, making it a great choice for those aiming for careers in business, finance, and management.
+                </p>
+                <button class="strand-button">Learn More</button>
+            </div>
+
+            <!-- GAS Strand -->
+            <div class="strand" onclick="toggleDescription(this)">
+                <img src="gas.jpg"class="image"></a> alt="GAS Image">
+                <div class="strand-name">GAS (General Academic Strand)</div>
+                <p class="strand-description">
+                    GAS is a flexible strand offering a mix of academic subjects. Students can explore subjects from other strands, allowing for a broad foundation of knowledge. It’s perfect for those who want to keep their options open for various careers or higher education paths.
+                </p>
+                <button class="strand-button">Learn More</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle the description visibility, showing one at a time
+        function toggleDescription(strandElement) {
+            // First, hide all descriptions
+            var allDescriptions = document.querySelectorAll('.strand-description');
+            allDescriptions.forEach(function(desc) {
+                desc.style.display = 'none';
+            });
+
+            // Then, display the description of the clicked strand
+            var description = strandElement.querySelector('.strand-description');
+            if (description.style.display === "none" || description.style.display === "") {
+                description.style.display = "block";
+            } else {
+                description.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
